@@ -1,0 +1,148 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "神戸のトイレマップ",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CurrentToiletIntent",
+                    "slots": [],
+                    "samples": [
+                        "近くのトイレを探す",
+                        "付近のトイレを調べる",
+                        "近く",
+                        "近くのトイレを調べる"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SpecificToiletIntent",
+                    "slots": [
+                        {
+                            "name": "address",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{address}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "トイレを探す",
+                        "トイレを調べる",
+                        "トイレの場所を調べる",
+                        "場所を指定",
+                        "場所を指定して調べる",
+                        "場所を指定する"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": [
+                        "次"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SoundToiletIntent",
+                    "slots": [],
+                    "samples": [
+                        "水の音を流す",
+                        "音を流して",
+                        "音を流す"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "SpecificToiletIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "address",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.282551023442.871773456158"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.282551023442.871773456158",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "場所を教えてください。"
+                    }
+                ]
+            }
+        ]
+    }
+}
